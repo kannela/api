@@ -6,6 +6,7 @@ from PIL import Image
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array
+import tensorflow as tf
 
 # ---- Configuración -----------------------------------------------------------------
 MODEL_PATH = os.getenv("MODEL_PATH", "modelo_neumonia.h5")   # cambia si usas otra ruta
@@ -14,7 +15,7 @@ THRESHOLD  = 0.5
 LABELS     = {0: "NORMAL", 1: "PNEUMONIA"}
 
 # ---- Carga del modelo al arrancar la app -------------------------------------------
-model = load_model(MODEL_PATH)
+model = tf.keras.models.load_model("modelo_neumonia")
 
 # ---- FastAPI -----------------------------------------------------------------------
 app = FastAPI(title="Pneumonia X‑ray Classifier API")
