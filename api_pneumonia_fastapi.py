@@ -15,7 +15,7 @@ THRESHOLD  = 0.5
 LABELS     = {0: "NORMAL", 1: "PNEUMONIA"}
 
 # ---- Carga del modelo al arrancar la app -------------------------------------------
-model = tf.keras.models.load_model("modelo_neumonia")
+model = tf.keras.models.load_model("modelo_neumonia.h5")
 
 # ---- FastAPI -----------------------------------------------------------------------
 app = FastAPI(title="Pneumonia X‑ray Classifier API")
